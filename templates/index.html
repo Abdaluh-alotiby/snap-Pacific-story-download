@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <title>Name Search</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-4 mb-4">Snapchat story downloader</h2>
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="text">Enter the name to shared url:</label>
+                <input type="text" class="form-control" id="text" name="url" placeholder="Enter name">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <h3 class="mt-4 mb-4" style="color:red;">{{error}}</h3>
+        {% if Rmode %}
+        <a href="{{url}}" download='thefile.mp4' target="_blank">url</a>
+        {% endif %}
+</body>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</html>
