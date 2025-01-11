@@ -12,11 +12,11 @@ def idget(url):
 
 def mediaUrlGet(shredurl):
   headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/103.0.2'}
-  r = requests.get(shredurl)
+  r = requests.get(shredurl,headers=headers)
   soup = BeautifulSoup(r.text, 'html.parser')
   link_tags = soup.find('link', {'data-react-helmet': 'true', 'rel': 'alternate', 'hreflang': 'ar-AR'})
   url = link_tags.get('href')
-  r = requests.get(url)
+  r = requests.get(url,headers=headers)
   id = idget(url)
   soup = BeautifulSoup(r.text, 'html.parser')
   next_data = soup.find('script', id='__NEXT_DATA__').string
