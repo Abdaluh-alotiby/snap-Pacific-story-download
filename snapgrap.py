@@ -23,7 +23,7 @@ def mediaUrlGet(shredurl):
   json_data = json.loads(next_data)
   
   jsonirls = json_data["props"]["pageProps"]["story"]["snapList"]
-  
+  mediaUrl = None
   for g in jsonirls:
     if g['snapId']['value'] == id:
       mediaUrl = g['snapUrls']['mediaUrl']
